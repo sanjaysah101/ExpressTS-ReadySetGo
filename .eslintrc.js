@@ -1,19 +1,19 @@
 module.exports = {
   env: {
     es2021: true,
-    node: true
+    node: true,
   },
-  extends: ["standard-with-typescript", "prettier"],
-  parser: "@typescript-eslint/parser",
+  extends: ['standard-with-typescript', 'prettier'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: "latest",
-    project: "tsconfig.eslint.json",
-    sourceType: "module",
-    tsconfigRootDir: __dirname // No quotes around __dirname
+    ecmaVersion: 'latest',
+    project: 'tsconfig.eslint.json',
+    sourceType: 'module',
+    tsconfigRootDir: __dirname,
   },
   rules: {
-    indent: "error",
-    "@typescript-eslint/prefer-nullish-coalescing": "error",
-    "@typescript-eslint/strict-boolean-expressions": "error"
-  }
+    indent: 'error',
+    '@typescript-eslint/prefer-nullish-coalescing': 'error',
+    '@typescript-eslint/strict-boolean-expressions': 'error',
+  },
 };
