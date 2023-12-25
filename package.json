@@ -16,8 +16,16 @@
     "url": "https://github.com/sknepali/ExpressTS-ReadySetGo.git"
   },
   "keywords": [
-    "quiz",
-    "ansopedia backend"
+    "Express",
+    "TypeScript",
+    "Node",
+    "Husky",
+    "Jest",
+    "Prettier",
+    "ESLint",
+    "Boilerplate",
+    "Backend template",
+    "Advance Node Express API Start Up File"
   ],
   "author": "sanjay sah",
   "license": "ISC",
