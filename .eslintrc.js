@@ -15,5 +15,6 @@ module.exports = {
     indent: 'error',
     '@typescript-eslint/prefer-nullish-coalescing': 'error',
     '@typescript-eslint/strict-boolean-expressions': 'error',
+    'no-console': 'error',
   },
 };
