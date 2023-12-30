@@ -1,6 +1,6 @@
 # ExpressTS-ReadySetGo
 
-ExpressTS-ReadySetGo is an Express.js and TypeScript boilerplate equipped with ESLint, Prettier, Husky, Jest, and Supertest, ready to kickstart your backend development.
+ExpressTS-ReadySetGo is an Express.js and TypeScript boilerplate equipped with ESLint, Prettier, Husky, Jest, Supertest, and Pino ready to kickstart your backend development.
 
 ## Features
 
@@ -11,6 +11,7 @@ ExpressTS-ReadySetGo is an Express.js and TypeScript boilerplate equipped with E
 - Husky for managing git hooks
 - Jest for testing
 - Supertest for HTTP assertions
+- Pino for logger
 
 ## Getting Started
 
