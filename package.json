@@ -4,7 +4,7 @@
   "description": "An Express.js and TypeScript boilerplate equipped with ESLint, Prettier, Husky, Jest, and Supertest, ready to kickstart your backend development.",
   "main": "index.js",
   "scripts": {
-    "start": "node ./dist/index.js",
+    "start": "node ./build/index.js",
     "dev": "nodemon",
     "build": "tsc",
     "pretest": "npm run build",
