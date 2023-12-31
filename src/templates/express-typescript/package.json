@@ -1,7 +1,7 @@
 {
-  "name": "quiz",
+  "name": "<%= projectName %>",
   "version": "1.0.0",
-  "description": "quiz app backend for ansopedia",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node ./dist/index.js",
@@ -15,12 +15,9 @@
     "type": "git",
     "url": "https://github.com/sknepali/quiz-ansopedia-backend.git"
   },
-  "keywords": [
-    "quiz",
-    "ansopedia backend"
-  ],
-  "author": "sanjay sah",
-  "license": "ISC",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sknepali/quiz-ansopedia-backend/issues"
   },
@@ -28,6 +25,7 @@
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/express-pino-logger": "^4.0.5",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
     "@types/jest": "^29.5.11",
     "@types/node": "^20.10.5",
     "@types/supertest": "^6.0.1",
