@@ -6,7 +6,7 @@
     "moduleResolution": "Node",
     "baseUrl": "./src",
     "sourceMap": true,
-    "outDir": "./build",
+    "outDir": "./dist",
     "sourceRoot": "./src",
     "noEmitOnError": true,
     "esModuleInterop": true,

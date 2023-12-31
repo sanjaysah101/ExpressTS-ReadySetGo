@@ -5,7 +5,7 @@
 /coverage
 
 # production
-/dist
+/build
 
 # environment variables
 .env
