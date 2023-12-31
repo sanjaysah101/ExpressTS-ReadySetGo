@@ -123,7 +123,7 @@ function postProcess(options: CliOptions): boolean {
     shell.exec('git add .');
     shell.exec('git commit -m "initial commit"');
 
-    const result = shell.exec('yarn add');
+    const result = shell.exec('yarn');
     console.log(chalk.blueBright('installing packages'));
     if (result.code !== 0) {
       console.log(chalk.redBright('Failed to install packages'));
