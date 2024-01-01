@@ -43,7 +43,7 @@ let options: CliOptions;
 
 inquirer
   .prompt(QUESTIONS)
-  .then(async (answers: any) => {
+  .then((answers: any) => {
     const projectChoice: string = answers.template;
     const projectName: string = answers.name;
     const templatePath = path.join(__dirname, 'templates', projectChoice);
@@ -60,15 +60,16 @@ inquirer
 
     createProject(targetPath);
 
-    await createDirectoryContents(templatePath, projectName);
+    createDirectoryContents(templatePath, projectName);
 
-    await postProcess(options);
+    postProcess(options);
   })
   .catch((err) => {
-    console.log(err);
+    console.log(chalk.redBright(`Some thing went wrong ${err}`));
   });
 
 function createProject(projectPath: string): void {
   console.log(chalk.yellowBright('Creating the project..'));
   fs.mkdirSync(projectPath);
+  console.log(chalk.yellowBright('Project created'));
 }

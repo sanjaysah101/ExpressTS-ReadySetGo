@@ -1,30 +1,48 @@
 import * as fs from 'fs';
 import * as path from 'path';
+
 import * as template from './utils/template';
 import { CURR_DIR, SKIP_FILES } from './utils/config';
 
-export async function createDirectoryContents(templatePath: string, projectName: string): Promise<void> {
-  const filesToCreate = await fs.promises.readdir(templatePath);
+export const createDirectoryContents = (templatePath: string, projectName: string): void => {
+  const filesToCreate = fs.readdirSync(templatePath);
 
-  await Promise.all(
-    filesToCreate.map(async (file: string) => {
-      const origFilePath = path.join(templatePath, file);
-      const stats = await fs.promises.stat(origFilePath);
+  filesToCreate.forEach((file) => {
+    const origFilePath = path.join(templatePath, file);
+    const stats = fs.statSync(origFilePath);
 
-      if (SKIP_FILES.includes(file)) return;
+    if (shouldSkipFile(file)) return;
 
-      if (stats.isFile()) {
-        const writePath = path.join(CURR_DIR, projectName, file);
-        await fs.promises.writeFile(
-          writePath,
-          (await template.render(await fs.promises.readFile(origFilePath, 'utf8'), { projectName })) as string,
-          'utf8',
-        );
-      } else if (stats.isDirectory()) {
-        const destDir = path.join(CURR_DIR, projectName, file);
-        await fs.promises.mkdir(destDir, { recursive: true });
-        await createDirectoryContents(origFilePath, path.join(projectName, file));
-      }
-    }),
-  );
-}
+    if (stats.isFile()) {
+      processFile(origFilePath, file, projectName);
+    } else if (stats.isDirectory()) {
+      processDirectory(origFilePath, file, projectName);
+    }
+  });
+};
+
+const shouldSkipFile = (file: string): boolean => {
+  return SKIP_FILES.includes(file);
+};
+
+const processFile = (origFilePath: string, fileName: string, projectName: string): void => {
+  const contents = transformFileContents(origFilePath, projectName);
+  const writePath = path.join(CURR_DIR, projectName, fileName);
+
+  fs.writeFileSync(writePath, contents, 'utf8');
+};
+
+const transformFileContents = (filePath: string, projectName: string): string => {
+  const contents = fs.readFileSync(filePath, 'utf8');
+  return template.render(contents, { projectName });
+};
+
+const processDirectory = (origDirPath: string, dirName: string, projectName: string): void => {
+  const targetDir = path.join(CURR_DIR, projectName, dirName);
+
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir);
+  }
+
+  createDirectoryContents(origDirPath, path.join(projectName, dirName));
+};
