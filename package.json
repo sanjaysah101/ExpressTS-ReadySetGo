@@ -1,6 +1,6 @@
 {
   "name": "@ansopedia/expressts-readysetgo",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An Express.js and TypeScript boilerplate equipped with ESLint, Prettier, Husky, Jest, and Supertest, ready to kickstart your backend development.",
   "main": "index.js",
   "type": "commonjs",
