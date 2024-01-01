@@ -71,5 +71,4 @@ inquirer
 function createProject(projectPath: string): void {
   console.log(chalk.yellowBright('Creating the project..'));
   fs.mkdirSync(projectPath);
-  console.log(chalk.yellowBright('Project created'));
 }
