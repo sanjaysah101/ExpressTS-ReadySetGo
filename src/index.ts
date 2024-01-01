@@ -31,8 +31,6 @@ export interface CliOptions {
 
 const CURR_DIR = process.cwd();
 
-let isUpdate: boolean = false;
-
 let options: CliOptions;
 
 function isValidNpmPackageName(projectName: string): boolean {
@@ -48,7 +46,9 @@ inquirer
     const templatePath = path.join(__dirname, 'templates', projectChoice);
     const targetPath = path.join(CURR_DIR, projectName);
 
-    if (!isValidNpmPackageName(projectName)) throw new Error(`${projectName} already exist`);
+    if (!isValidNpmPackageName(projectName)) throw new Error(`Invalid project name: ${projectName}`);
+
+    if (fs.existsSync(projectName)) throw new Error(`Project with name ${projectName} already exists.`);
 
     options = {
       projectName,
@@ -68,13 +68,8 @@ inquirer
   });
 
 function createProject(projectPath: string): void {
-  if (fs.existsSync(projectPath)) {
-    console.log(chalk.yellowBright('Updating the project..'));
-    isUpdate = true;
-  } else if (!fs.existsSync(projectPath)) {
-    console.log(chalk.yellowBright('Creating the project..'));
-    fs.mkdirSync(projectPath);
-  }
+  console.log(chalk.yellowBright('Creating the project..'));
+  fs.mkdirSync(projectPath);
 }
 
 const SKIP_FILES = ['node_modules', '.template.json'];
@@ -131,11 +126,7 @@ function postProcess(options: CliOptions): boolean {
     shell.exec('git commit -m "initial commit"');
   }
 
-  if (isUpdate) {
-    console.log(chalk.greenBright('Project successfully updated'));
-  } else {
-    console.log(chalk.greenBright('Project successfully created'));
-  }
+  console.log(chalk.greenBright('Project successfully created'));
 
   return true;
 }
