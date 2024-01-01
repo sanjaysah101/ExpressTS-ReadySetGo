@@ -1,11 +1,11 @@
 {
-  "name": "expressts-readysetgo",
-  "version": "1.0.0",
+  "name": "@ansopedia/expressts-readysetgo",
+  "version": "0.0.3",
   "description": "An Express.js and TypeScript boilerplate equipped with ESLint, Prettier, Husky, Jest, and Supertest, ready to kickstart your backend development.",
   "main": "index.js",
   "type": "commonjs",
   "bin": {
-    "expressts-readysetgo": ".dist/index.js"
+    "expressts-readysetgo": "./dist/index.js"
   },
   "workspaces": [
     "src/templates/express-typescript/*",
