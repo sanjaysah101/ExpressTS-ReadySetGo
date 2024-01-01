@@ -11,17 +11,9 @@
     "test": "jest",
     "prepare": "husky install"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sknepali/quiz-ansopedia-backend.git"
-  },
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sknepali/quiz-ansopedia-backend/issues"
-  },
-  "homepage": "https://github.com/sknepali/quiz-ansopedia-backend/blob/main/README.md",
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/express-pino-logger": "^4.0.5",

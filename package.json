@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sknepali/ExpressTS-ReadySetGo.git"
+    "url": "git+https://github.com/sanjaysah101/ExpressTS-ReadySetGo.git"
   },
   "keywords": [
     "Express",
@@ -38,9 +38,9 @@
   "author": "sanjay sah",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sknepali/ExpressTS-ReadySetGo.git/issues"
+    "url": "https://github.com/sanjaysah101/ExpressTS-ReadySetGo.git/issues"
   },
-  "homepage": "https://github.com/sknepali/ExpressTS-ReadySetGo.git/blob/main/README.md",
+  "homepage": "https://github.com/sanjaysah101/ExpressTS-ReadySetGo.git/blob/main/README.md",
   "devDependencies": {
     "@types/ejs": "^3.0.2",
     "@types/inquirer": "^6.5.0",

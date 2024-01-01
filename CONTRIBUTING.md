@@ -18,7 +18,7 @@ Contributing to ExpressTS-ReadySetGo is straightforward. Follow these steps to c
 2.  Clone your forked repository to your local machine:
 
     ```
-    git clone https://github.com/sknepali/ExpressTS-ReadySetGo.git
+    git clone https://github.com/sanjaysah101/ExpressTS-ReadySetGo.git
     ```
 
 3.  Create a new branch for your changes:

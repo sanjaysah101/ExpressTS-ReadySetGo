@@ -26,7 +26,7 @@ Make sure you have Node.js and npm installed on your machine.
 1. Clone the repository:
 
    ```
-   git clone https://github.com/sknepali/ExpressTS-ReadySetGo.git
+   git clone https://github.com/sanjaysah101/ExpressTS-ReadySetGo.git
    ```
 
 2. Install dependencies:
